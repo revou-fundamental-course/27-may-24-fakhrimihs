@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: top 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  overflow: hidden;
+  padding: 0 10px;
+}
+
+.navbar.hidden {
+  top: -100px; /* Atur tinggi navbar sesuai kebutuhan */
+}
+
+.navbar img {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin: 5px 0;
+}
+
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.facilitation-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.facilitation {
+  text-align: center;
+  margin: 20px;
+}
+
+.facilitation img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+#output {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+#output h2 {
+  margin-top: 0;
+}
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto;
+}

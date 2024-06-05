@@ -4,6 +4,105 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Revou|Project</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="navbar" id="navbar" style="padding-bottom: 10px">
+      <img src="img/revou.jpg" alt="RevoU Logo" />
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#facilitation">Our Profile</a>
+        <a href="#achiev">Achievement</a>
+        <a href="#messageus">Message Us</a>
+      </div>
+    </div>
+    <div id="home" style="padding: 20px; margin-top: 50px">
+      <h1>Hi Fakhri, welcome to the website</h1>
+      <p>
+        Selamat datang di dashboard sekolah kami! Kami adalah komunitas pendidikan yang bersemangat dan berdedikasi untuk memberikan pengalaman pembelajaran terbaik kepada setiap siswa. Di sini, kami tidak hanya mengajar pengetahuan
+        akademis, tetapi juga membentuk karakter, menumbuhkan bakat, dan mempersiapkan para siswa untuk menjadi pemimpin masa depan. Dengan fasilitas modern dan staf pengajar yang berkualitas, kami menciptakan lingkungan yang mendukung
+        eksplorasi, pembelajaran aktif, dan pertumbuhan pribadi. Di sekolah kami, nilai-nilai seperti integritas, kerjasama, dan kreativitas ditanamkan dalam setiap aspek kegiatan. Kami bangga menjadi bagian dari perjalanan pendidikan Anda
+        dan siap membantu Anda meraih kesuksesan dalam setiap langkah. Bersama-sama, mari kita wujudkan potensi Anda dan capai impian masa depan yang gemilang!
+      </p>
+    </div>
+    <hr />
+    <div id="facilitation" style="padding: 20px">
+      <h1>Our Facilitation</h1>
+      <div class="facilitation-container">
+        <div class="facilitation">
+          <img src="img/gambar1.jpg" alt="facilitation 1" />
+          <p>Professional Teacher</p>
+        </div>
+        <div class="facilitation">
+          <img src="img/gambar2.jpeg" alt="facilitation 2" />
+          <p>Sport Field</p>
+        </div>
+        <div class="facilitation">
+          <img src="img/gambar3.jpg" alt="facilitation 3" />
+          <p>Classroom</p>
+        </div>
+        <div class="facilitation">
+          <img src="img/gambar4.jpg" alt="facilitation 4" />
+          <p>Extracurricular</p>
+        </div>
+        <div class="facilitation">
+          <img src="img/gambar5.jpg" alt="facilitation 5" />
+          <p>Laboratory</p>
+        </div>
+        <p>
+          Di sekolah kami, siswa dapat menikmati fasilitas modern yang mendukung pembelajaran dan pengembangan mereka. Guru-guru profesional kami tidak hanya mengajar, tetapi juga menjadi mentor dan teladan bagi para siswa. Lapangan
+          olahraga yang luas dan fasilitas olahraga yang lengkap memungkinkan partisipasi dalam berbagai kegiatan olahraga dan kebugaran. Kami juga menawarkan beragam kegiatan ekstrakurikuler, mulai dari seni, musik, hingga sains dan
+          teknologi, untuk mengeksplorasi minat dan bakat siswa. Dengan fasilitas dan dukungan yang kami tawarkan, kami yakin setiap siswa akan menemukan potensi terbaik mereka dan siap menghadapi masa depan.
+        </p>
+      </div>
+    </div>
+    <hr />
+    <div id="achiev" style="padding: 20px">
+      <h1>Achievement</h1>
+      <p>
+        Sekolah kami telah mencapai berbagai prestasi yang membanggakan dalam bidang pendidikan, akademis, dan ekstrakurikuler. Kami memiliki catatan prestasi yang kuat dalam ujian nasional dan kompetisi akademis, menunjukkan dedikasi kami
+        untuk mencapai standar akademis yang tinggi dan mempersiapkan siswa untuk kesuksesan di masa depan. Di samping itu, kami juga meraih penghargaan dalam berbagai kegiatan ekstrakurikuler, seperti olahraga, seni, dan sains, memperkuat
+        reputasi kami sebagai sekolah yang merangkul potensi siswa dalam berbagai bidang. Prestasi ini adalah bukti dari komitmen kami untuk memberikan pendidikan berkualitas tinggi dan membantu setiap siswa mencapai prestasi terbaik
+        mereka. Dengan semangat ini, kami terus berusaha untuk menjadi pusat pembelajaran yang unggul dan mempersiapkan siswa kami untuk menghadapi tantangan dunia modern dengan percaya diri dan keberanian.
+      </p>
+    </div>
+    <hr />
+    <div id="messageus" style="padding: 20px; display: flex; flex-direction: column">
+      <h1>Message Us</h1>
+      <p>
+        Jangan ragu untuk menghubungi kami! Kami ingin mendengar pendapat, pertanyaan, atau saran dari Anda. Apakah Anda memiliki pertanyaan tentang program sekolah, ingin mengajukan permintaan informasi lebih lanjut, atau ingin berbagi
+        cerita tentang pengalaman Anda di sekolah kami, tim kami siap membantu. Isi formulir di bawah ini dengan detail Anda, dan kami akan segera menghubungi Anda. Kami berkomitmen untuk memberikan layanan yang ramah, responsif, dan
+        membantu setiap anggota komunitas kami mencapai tujuan mereka. Terima kasih atas minat dan dukungan Anda terhadap sekolah kami!
+      </p>
+      <div style="flex: 1; display: flex">
+        <div style="flex: 1">
+          <form id="messageForm">
+            <label for="name">Nama:</label><br />
+            <input type="text" id="name" name="name" /><br /><br />
+            <label for="dob">Tanggal Lahir:</label><br />
+            <input type="date" id="dob" name="dob" /><br /><br />
+            <label for="gender">Jenis Kelamin:</label><br />
+            <input type="radio" id="male" name="gender" value="Laki-laki" />
+            <label for="male">Laki-laki</label><br />
+            <input type="radio" id="female" name="gender" value="Perempuan" />
+            <label for="female">Perempuan</label><br /><br />
+            <label for="message">Pesan:</label><br />
+            <textarea id="message" name="message" rows="4" cols="50"></textarea><br /><br />
+            <input type="button" value="Submit" onclick="displayMessage()" />
+          </form>
+        </div>
+        <div id="output" style="flex: 1; padding-left: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: #f9f9f9">
+          <p id="outputName"></p>
+          <p id="outputDob"></p>
+          <p id="outputGender"></p>
+          <p id="outputMessage"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2024 Revou Project-fakhri. All rights reserved.</p>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
 </html>
