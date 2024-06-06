@@ -69,3 +69,10 @@ function logout() {
   localStorage.removeItem("userPhone");
   window.location.href = "index.html";
 }
+
+// Fungsi Konfirmasi Logout
+function confirmLogout() {
+  if (confirm("Apakah Anda yakin akan logout?")) {
+    logout();
+  }
+}
