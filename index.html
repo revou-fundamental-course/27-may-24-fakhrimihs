@@ -3,80 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Revou|Project</title>
+    <title>Revou | Project</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="navbar" id="navbar" style="padding-bottom: 10px">
-      <img src="img/revou.jpg" alt="RevoU Logo" />
+    <!-- Popup Form -->
+    <div id="popupForm" class="popup-form">
+      <div class="popup-content">
+        <h2>Akses Web</h2>
+        <label for="popupName">Nama:</label>
+        <input type="text" id="popupName" required /><br /><br />
+        <label for="popupEmail">Email:</label>
+        <input type="email" id="popupEmail" required /><br /><br />
+        <label for="popupPhone">Nomor Telepon:</label>
+        <input type="tel" id="popupPhone" required /><br /><br />
+        <button onclick="submitPopup()">Submit</button>
+      </div>
+    </div>
+    <!--Popup Description-->
+    <div class="popup" id="popup">
+      <div class="popup-desc">
+        <h2 id="popupTitle"></h2>
+        <hr />
+        <p id="popupDesc"></p>
+        <button class="close-btn" onclick="closePopup()">Tutup</button>
+      </div>
+    </div>
+    <!--Mulai Navbar-->
+    <div class="navbar" id="navbar" style="padding: 20px; display: flex; align-items: center">
+      <div>
+        <span style="font-size: 20px; font-weight: bold">RS Ihsan Medika</span>
+      </div>
       <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#facilitation">Our Profile</a>
-        <a href="#achiev">Achievement</a>
-        <a href="#messageus">Message Us</a>
+        <a href="#home">Beranda</a>| <a href="#facilitation">Fasilitas</a>| <a href="#messageus">Kontak</a>| <a href="javascript:void(0)" onclick="logout()" class="logout-icon"> <span class="lnr lnr-exit"></span> Logout </a>
+        <!-- Tombol Logout -->
       </div>
     </div>
-    <div id="home" style="padding: 20px; margin-top: 50px">
-      <h1>Hi Fakhri, welcome to the website</h1>
+    <!--Akhir Navbar-->
+    <!--Mulai Per-Section-->
+    <section id="home" class="section home" style="padding: 20px; margin-top: 50px">
+      <h1>Rumah Sakit Ihsan Medika</h1>
+      <hr />
+      <h3>Halo <span id="userName">Tamu</span></h3>
+    </section>
+    <section id="desc" class="section desc" style="padding: 20px; margin-top: 50px">
+      <div class="desc-text">
+        <h1>Selamat Datang</h1>
+        <h4>
+          RS Ihsan Medika, terletak di Bekasi Utara, menawarkan layanan kesehatan berkualitas tinggi dengan berbagai fasilitas utama. UGD kami siap menerima keadaan darurat medis, sementara ruang operasi dilengkapi dengan peralatan canggih.
+          Unit ICU kami merawat pasien kritis, sementara poliklinik menyediakan konsultasi spesialis. Di laboratorium kami, pasien dapat melakukan berbagai tes medis. Alamat kami: Jalan Kencana, Bekasi Utara. Terima kasih atas kepercayaan
+          Anda kepada RS Ihsan Medika.
+        </h4>
+      </div>
+      <img src="img/drimg.jpeg" alt="RS Ihsan Medika" />
+    </section>
+    <section id="facilitation" class="section facilitation" style="padding: 20px">
+      <h1>Fasilitas Kami</h1>
       <p>
-        Selamat datang di dashboard sekolah kami! Kami adalah komunitas pendidikan yang bersemangat dan berdedikasi untuk memberikan pengalaman pembelajaran terbaik kepada setiap siswa. Di sini, kami tidak hanya mengajar pengetahuan
-        akademis, tetapi juga membentuk karakter, menumbuhkan bakat, dan mempersiapkan para siswa untuk menjadi pemimpin masa depan. Dengan fasilitas modern dan staf pengajar yang berkualitas, kami menciptakan lingkungan yang mendukung
-        eksplorasi, pembelajaran aktif, dan pertumbuhan pribadi. Di sekolah kami, nilai-nilai seperti integritas, kerjasama, dan kreativitas ditanamkan dalam setiap aspek kegiatan. Kami bangga menjadi bagian dari perjalanan pendidikan Anda
-        dan siap membantu Anda meraih kesuksesan dalam setiap langkah. Bersama-sama, mari kita wujudkan potensi Anda dan capai impian masa depan yang gemilang!
+        Rumah Sakit Ihsan Medika adalah fasilitas kesehatan terkemuka yang menyediakan layanan medis lengkap dan berkualitas tinggi bagi masyarakat. Didirikan dengan komitmen untuk memberikan perawatan terbaik, rumah sakit kami dilengkapi
+        dengan teknologi medis mutakhir dan tim profesional medis yang berpengalaman. Kami menawarkan berbagai layanan mulai dari unit gawat darurat, ruang operasi, unit perawatan intensif, poliklinik, hingga laboratorium diagnostik.
       </p>
-    </div>
-    <hr />
-    <div id="facilitation" style="padding: 20px">
-      <h1>Our Facilitation</h1>
+      <br />
+      <br />
       <div class="facilitation-container">
-        <div class="facilitation">
-          <img src="img/gambar1.jpg" alt="facilitation 1" />
-          <p>Professional Teacher</p>
+        <div
+          class="facilitation"
+          onclick="showPopup('Unit Gawat Darurat', 'Merupakan salah satu fasilitas penting yang disediakan oleh Rumah Sakit Ihsan Medika. Unit ini berperan sebagai titik awal penanganan medis untuk pasien yang mengalami kondisi darurat atau keadaan kritis. UGD kami memiliki tim medis yang terlatih dan siaga untuk memberikan pelayanan cepat dan efektif kepada pasien yang membutuhkan pertolongan medis segera. Fasilitas yang tersedia di Unit Gawat Darurat meliputi berbagai peralatan medis canggih dan ruang perawatan yang dirancang untuk menangani berbagai jenis keadaan darurat, mulai dari luka ringan hingga kondisi medis yang mengancam jiwa. Selain itu, UGD kami juga dilengkapi dengan layanan ambulans yang siap melakukan transportasi medis cepat dan aman bagi pasien yang memerlukan perawatan di rumah sakit.')"
+        >
+          <img src="img/ugd.jpg" alt="facilitation 1" />
+          <p>Unit Gawat Darurat</p>
         </div>
-        <div class="facilitation">
-          <img src="img/gambar2.jpeg" alt="facilitation 2" />
-          <p>Sport Field</p>
+        <div
+          class="facilitation"
+          onclick="showPopup('Ruang Operasi', 'Merupakan tempat di mana prosedur bedah dilakukan dengan keahlian tinggi dan peralatan canggih. Ruang ini didesain untuk memberikan lingkungan yang aman dan steril bagi pasien selama prosedur bedah, serta memungkinkan tim medis untuk melakukan operasi dengan presisi dan efisiensi. Fasilitas di Ruang Operasi kami mencakup peralatan bedah modern dan teknologi terkini, yang memungkinkan dokter bedah dan tim medis untuk melakukan berbagai jenis prosedur bedah dengan hasil yang optimal. Setiap detail di Ruang Operasi kami dirancang dengan cermat untuk memastikan keselamatan dan kenyamanan pasien, serta memberikan kondisi terbaik bagi keberhasilan prosedur bedah.')"
+        >
+          <img src="img/rop.jpg" alt="facilitation 2" />
+          <p>Ruang Operasi</p>
         </div>
-        <div class="facilitation">
-          <img src="img/gambar3.jpg" alt="facilitation 3" />
-          <p>Classroom</p>
+        <div
+          class="facilitation"
+          onclick="showPopup('Unit Perawatan Intensif', 'Merupakan fasilitas kritis yang dirancang khusus untuk merawat pasien dengan kondisi medis yang mengancam jiwa. Di ICU, pasien mendapatkan perawatan yang intensif dan pemantauan yang ketat dari tim medis terlatih yang berdedikasi untuk menyelamatkan nyawa dan memulihkan kesehatan pasien. Fasilitas di ICU kami dilengkapi dengan peralatan medis canggih dan terbaru, termasuk monitor vital, ventilator, dan peralatan pendukung kehidupan lainnya. Ini memungkinkan tim medis untuk memantau kondisi pasien secara terus-menerus dan memberikan intervensi medis yang cepat dan tepat sesuai dengan kebutuhan pasien.')"
+        >
+          <img src="img/icu.jpg" alt="facilitation 3" />
+          <p>Unit Perawatan Intensif</p>
         </div>
-        <div class="facilitation">
-          <img src="img/gambar4.jpg" alt="facilitation 4" />
-          <p>Extracurricular</p>
+        <div
+          class="facilitation"
+          onclick="showPopup('Poliklinik', 'Merupakan pusat pelayanan kesehatan yang menyediakan konsultasi medis dan perawatan untuk berbagai macam kondisi medis non-urgensi. Kami menyediakan layanan kesehatan yang komprehensif dan terjangkau bagi pasien yang membutuhkan perawatan berkualitas dari dokter spesialis. Fasilitas di Poliklinik kami mencakup ruang konsultasi yang nyaman dan dilengkapi dengan peralatan medis dasar untuk mendukung proses pemeriksaan dan penanganan pasien. Di sini, pasien dapat berkonsultasi dengan dokter spesialis untuk mendapatkan diagnosis, perawatan, dan manajemen kondisi medis mereka.')"
+        >
+          <img src="img/pol.jpg" alt="facilitation 4" />
+          <p>Poliklinik</p>
         </div>
-        <div class="facilitation">
+        <div
+          class="facilitation"
+          onclick="showPopup('Laboratorium', 'Merupakan fasilitas yang menyediakan berbagai jenis tes medis untuk membantu dalam diagnosis penyakit, pemantauan kondisi kesehatan, dan perawatan pasien. Laboratorium kami dilengkapi dengan peralatan modern dan terkini serta dikelola oleh tim profesional yang terlatih dalam melakukan berbagai jenis uji laboratorium. Fasilitas di laboratorium kami mencakup beragam tes darah, urine, dan tes pencitraan laboratorium lainnya. Ini termasuk tes rutin seperti hitung darah lengkap (HDL), analisis kimia darah, dan tes fungsi hati, serta tes khusus seperti tes hormon, tes alergi, dan tes genetik. Semua tes dilakukan dengan akurasi tinggi dan sesuai dengan standar laboratorium yang ketat.')"
+        >
           <img src="img/gambar5.jpg" alt="facilitation 5" />
-          <p>Laboratory</p>
+          <p>Laboratorium</p>
         </div>
-        <p>
-          Di sekolah kami, siswa dapat menikmati fasilitas modern yang mendukung pembelajaran dan pengembangan mereka. Guru-guru profesional kami tidak hanya mengajar, tetapi juga menjadi mentor dan teladan bagi para siswa. Lapangan
-          olahraga yang luas dan fasilitas olahraga yang lengkap memungkinkan partisipasi dalam berbagai kegiatan olahraga dan kebugaran. Kami juga menawarkan beragam kegiatan ekstrakurikuler, mulai dari seni, musik, hingga sains dan
-          teknologi, untuk mengeksplorasi minat dan bakat siswa. Dengan fasilitas dan dukungan yang kami tawarkan, kami yakin setiap siswa akan menemukan potensi terbaik mereka dan siap menghadapi masa depan.
-        </p>
       </div>
-    </div>
-    <hr />
-    <div id="achiev" style="padding: 20px">
-      <h1>Achievement</h1>
       <p>
-        Sekolah kami telah mencapai berbagai prestasi yang membanggakan dalam bidang pendidikan, akademis, dan ekstrakurikuler. Kami memiliki catatan prestasi yang kuat dalam ujian nasional dan kompetisi akademis, menunjukkan dedikasi kami
-        untuk mencapai standar akademis yang tinggi dan mempersiapkan siswa untuk kesuksesan di masa depan. Di samping itu, kami juga meraih penghargaan dalam berbagai kegiatan ekstrakurikuler, seperti olahraga, seni, dan sains, memperkuat
-        reputasi kami sebagai sekolah yang merangkul potensi siswa dalam berbagai bidang. Prestasi ini adalah bukti dari komitmen kami untuk memberikan pendidikan berkualitas tinggi dan membantu setiap siswa mencapai prestasi terbaik
-        mereka. Dengan semangat ini, kami terus berusaha untuk menjadi pusat pembelajaran yang unggul dan mempersiapkan siswa kami untuk menghadapi tantangan dunia modern dengan percaya diri dan keberanian.
+        Dengan fokus pada keselamatan pasien dan kualitas layanan, Rumah Sakit Ihsan Medika berusaha untuk memberikan pengalaman perawatan yang nyaman dan efektif. Kami juga menyediakan program kesehatan dan pendidikan untuk meningkatkan
+        kesadaran kesehatan masyarakat. Rumah sakit kami beroperasi 24/7 untuk memastikan bahwa pasien menerima perawatan yang mereka butuhkan kapan saja.
       </p>
-    </div>
-    <hr />
-    <div id="messageus" style="padding: 20px; display: flex; flex-direction: column">
-      <h1>Message Us</h1>
-      <p>
-        Jangan ragu untuk menghubungi kami! Kami ingin mendengar pendapat, pertanyaan, atau saran dari Anda. Apakah Anda memiliki pertanyaan tentang program sekolah, ingin mengajukan permintaan informasi lebih lanjut, atau ingin berbagi
-        cerita tentang pengalaman Anda di sekolah kami, tim kami siap membantu. Isi formulir di bawah ini dengan detail Anda, dan kami akan segera menghubungi Anda. Kami berkomitmen untuk memberikan layanan yang ramah, responsif, dan
-        membantu setiap anggota komunitas kami mencapai tujuan mereka. Terima kasih atas minat dan dukungan Anda terhadap sekolah kami!
-      </p>
+    </section>
+    <section id="messageus" class="section message-us" style="padding: 20px; display: flex; flex-direction: column">
+      <h1>Kontak Kami</h1>
       <div style="flex: 1; display: flex">
-        <div style="flex: 1">
-          <form id="messageForm">
+        <div style="flex: 1; margin-right: 20px">
+          <form id="messageForm" style="border: 1px solid #ccc; border-radius: 10px; padding: 20px; background-color: #eef2ed">
             <label for="name">Nama:</label><br />
             <input type="text" id="name" name="name" /><br /><br />
             <label for="dob">Tanggal Lahir:</label><br />
@@ -91,18 +126,26 @@
             <input type="button" value="Submit" onclick="displayMessage()" />
           </form>
         </div>
-        <div id="output" style="flex: 1; padding-left: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: #f9f9f9">
+        <div id="output" style="flex: 1; padding-left: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: #eef2ed">
           <p id="outputName"></p>
           <p id="outputDob"></p>
           <p id="outputGender"></p>
           <p id="outputMessage"></p>
         </div>
       </div>
-    </div>
-
+    </section>
+    <!--Akhir Section-->
+    <!--Mulai Footer-->
     <div class="footer">
-      <p>&copy; 2024 Revou Project-fakhri. All rights reserved.</p>
+      <div class="left-section">
+        <p>Jalan Kencana, Bekasi Utara</p>
+        <p>No. Telepon: (021) 123-4567</p>
+      </div>
+      <div class="right-section">
+        <p>&copy; 2024 Revou Project-fakhri. All rights reserved.</p>
+      </div>
     </div>
+    <!--Akhir Footer-->
     <script src="js/script.js"></script>
   </body>
 </html>

@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   margin: 0;
   padding: 0;
 }
 
+/* CSS navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -13,32 +16,37 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #333;
+  background-color: #eef2ed;
   overflow: hidden;
   padding: 0 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .navbar.hidden {
-  top: -100px; /* Atur tinggi navbar sesuai kebutuhan */
+  top: -100px;
 }
 
-.navbar img {
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  margin: 5px 0;
+.nav-links a {
+  color: #121629;
+  font-family: "Roboto", sans-serif;
 }
 
-.navbar .nav-links {
-  display: flex;
-  align-items: center;
+.nav-links a:hover {
+  background-color: #555;
 }
-
+section {
+  padding-top: 65px;
+}
+section[id] {
+  scroll-margin-top: 65px;
+}
 .navbar a {
-  color: white;
+  color: rgb(13, 13, 13);
   text-align: center;
-  padding: 14px 20px;
+  padding: 14px 55px;
   text-decoration: none;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
 }
 
 .navbar a:hover {
@@ -46,23 +54,72 @@ body {
   color: black;
 }
 
+/* CSS untuk beranda */
+#home {
+  padding: 20px;
+  margin-top: 50px;
+  background-image: url("../img/rsihsan.jpeg");
+  background-position: center;
+  position: relative;
+  color: #ffff;
+  text-align: right;
+  padding-left: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+#home::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* CSS untuk deskripsi fasilitas */
+.desc {
+  display: flex;
+  align-items: flex-start;
+}
+.desc img {
+  margin-left: auto;
+  max-width: 500px;
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+.desc-text {
+  max-width: 600px;
+}
+
+#facilitation {
+  background-color: #eef2ed;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+/* CSS untuk judul */
+#userName {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+/* Kontainer fasilitas */
 .facilitation-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-
 .facilitation {
   text-align: center;
-  margin: 20px;
 }
-
 .facilitation img {
-  border-radius: 50%;
-  width: 150px;
+  width: 200px;
   height: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
+/*CSS untuk output dari form yang diisi (kontak kami)*/
 #output {
   border: 1px solid #ccc;
   padding: 10px;
@@ -73,10 +130,101 @@ body {
 #output h2 {
   margin-top: 0;
 }
-.footer {
+
+/* CSS untuk form pop-up login */
+.popup-form {
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  width: 300px;
+}
+.popup-content input,
+.popup-content button {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 5px 0;
+}
+.popup-content input[type="text"],
+.popup-content input[type="email"],
+.popup-content input[type="tel"] {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.popup-content button {
   background-color: #333;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.popup-content button:hover {
+  background-color: #555;
+}
+
+/*CSS untuk pop-up deskripsi */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+.popup-desc {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
   text-align: center;
-  padding: 10px 0;
-  margin-top: auto;
+  overflow-y: auto;
+  max-height: 70vh;
+}
+.popup-desc p {
+  margin: 0;
+}
+.close-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/*CSS untuk footer*/
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #636762;
+  color: #fff;
+}
+
+.left-section {
+  text-align: left;
+}
+
+.right-section {
+  text-align: right;
 }
