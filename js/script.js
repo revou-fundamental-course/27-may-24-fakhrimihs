@@ -28,7 +28,7 @@ function submitPopup() {
 
     alert("Anda Sudah Berhasil Masuk");
   } else {
-    alert("Isi Kolom yang Tersedia");
+    alert("Isi Kolom yang Tersedia!");
   }
 }
 
@@ -56,9 +56,9 @@ function displayMessage() {
     document.getElementById("outputGender").innerText = "Jenis Kelamin: " + (gender ? gender.value : "Tidak dipilih");
     document.getElementById("outputMessage").innerText = "Pesan: " + message;
 
-    alert("Data yang Anda masukkan akan divalidasi.");
+    alert("Data yang Anda masukkan akan divalidasi, cek email secara berkala.");
   } else {
-    alert("Masukan Data Anda.");
+    alert("Harap masukkan data Anda!");
   }
 }
 
